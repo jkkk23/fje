@@ -1,3 +1,7 @@
+### 项目所在地址
+
+https://github.com/jkkk23/fje
+
 ### 设计模式的应用
 
 工厂方法（Factory Method）：用于创建不同风格的展示对象（TreeDisplayStyle、RectangleDisplayStyle）。
@@ -57,3 +61,6 @@ fje/
 
 ![1717593064579](image/README/1717593064579.png)
 
+### 添加风格
+
+只需要在icon_family.py中添加新的图标组，并在factories.py中调用即可
