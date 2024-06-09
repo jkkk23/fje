@@ -40,22 +40,33 @@ fje/
 ![1717922206228](image/README/1717922206228.png)
 
 
-说明
-1.Container：表示JSON数据的节点，可以是对象节点或叶子节点。
 
-2.JSONObjectNode 和 JSONLeafNode：分别表示JSON对象节点和叶子节点。
+类详细介绍
+1. DisplayStyle :抽象类，定义了展示风格的接口，包含 display、visit 和 visit_leaf 方法。
 
-3.DisplayStyle：抽象类，用于定义显示风格的接口。
+2. TreeDisplayStyle :具体类,实现树形展示风格。
 
-4.TreeDisplayStyle 和 RectangleDisplayStyle：具体实现类，分别实现树形和矩形风格的显示。
+3. RectangleDisplayStyle :具体类,实现矩形展示风格。
 
-5.IconFamily：抽象类，用于定义图标族的接口。
+4. DisplayStyleFactory :具体类,用于创建不同风格的展示对象。
 
-6.PokerFaceIconFamily 和 OtherIconFamily：具体实现类，分别实现不同的图标族。
+5. IconFamilyFactory :具体类,用于创建不同图标族的展示对象。
 
-7.DisplayStyleFactory：工厂类，用于创建不同的显示风格对象。
+6. IconFamily:抽象类,定义了图标族的接口。
 
-8.IconFamilyFactory：工厂类，用于创建不同的图标族对象。
+7. PokerFaceIconFamily:具体类,实现扑克图标族。
+
+8. StarIconFamily :具体类,实现星星图标族。
+
+9. container :具体类,表示一个容器节点，可以包含子节点。
+
+10. JSONObjectNode :具体类,表示一个 JSON 对象节点。
+
+11. JSONLeafNode :具体类,表示一个 JSON 叶子节点。
+
+12. FunnyJsonExplorer :具体类,主程序类，用于加载 JSON 文件并展示。
+
+13. build_json_tree :函数,构建 JSON 数据的树形结构。
 
 ### 实验结果
 调用测试文件fje_test.bat，使用文件data.json进行测试，得到测试结果如下：
