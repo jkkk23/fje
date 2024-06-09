@@ -3,7 +3,6 @@ import argparse
 from factories import DisplayStyleFactory, IconFamilyFactory
 from json_node import build_json_tree
 
-
 class FunnyJsonExplorer:
     def __init__(self, args):
         self.file = args.file
@@ -26,9 +25,8 @@ class FunnyJsonExplorer:
         style = style_factory.create_display_style(self.style)
         icon_family = icon_factory.create_icon_family(self.icon)
 
-        print(root_node.display(style, icon_family))
-
-        
+        root_node.accept(style, icon_family)
+        print(style.get_result())
         
 def main():
     parser = argparse.ArgumentParser(description='Funny JSON Explorer')
@@ -39,19 +37,6 @@ def main():
 
     explorer = FunnyJsonExplorer(args)
     explorer.show()
-'''
-    with open(args.file, 'r') as f:
-        data = json.load(f)
 
-    root_node = build_json_tree(data)
-
-    style_factory = DisplayStyleFactory()
-    icon_factory = IconFamilyFactory()
-
-    style = style_factory.create_display_style(args.style)
-    icon_family = icon_factory.create_icon_family(args.icon)
-
-    print(root_node.display(style, icon_family))
-'''
 if __name__ == "__main__":
     main()
